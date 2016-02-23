@@ -4,12 +4,10 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "async": "^1.5.2",
-    "camo": "^0.11.4",
     "body-parser": "^1.15.0",
-    "mongodb": "^2.1.7",
+    "camo": "^0.11.4",
     "express": "^4.13.4",
-    "connect-mongo": "^1.1.0"
+    "winston": "^2.1.1"
   },
   "devDependencies": {},
   "scripts": {

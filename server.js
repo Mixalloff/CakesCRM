@@ -5,7 +5,6 @@ var express = require("express"),
     http    = require("http"),
     config  = require("./configs/common.json"),
     Logger = require('./utils/logger'),
-   // logger  = new Logger(),
     BodyParser = require('body-parser'),
     Controllers = require('./controllers');
     
@@ -42,7 +41,9 @@ class Server {
         });
         
         app.use('/admin', Controllers.Admin);
-        
+        app.use('/clients', Controllers.Client);
+        app.use('/orders', Controllers.Order);
+       
         app.use((req, res)=>{
             res.send(404, "Page not found");
         });

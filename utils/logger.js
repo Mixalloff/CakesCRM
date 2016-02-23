@@ -1,6 +1,7 @@
 'use strict';
 
 var fs = require('fs');
+var util = require('util');
 
 class Logger{
     constructor(){
@@ -12,7 +13,7 @@ class Logger{
     }
     
      printMessage(message) {
-        var msg = this.getTime() + ' -- ' + message;
+        var msg = util.format("%s -- %s", this.getTime(), message);
         fs.appendFile(this.logFile, msg + '\n', (err) => {
             if (err) throw err;
         });
@@ -22,16 +23,18 @@ class Logger{
      clearLog() {
         fs.writeFile(this.logFile, '', (err) => {
             if (err) throw err;
+            console.log(util.format("%s -- %s", this.getTime(), "Logs cleared"));
         });
     }
     
     info(message) {
-       // console.log("info: " + message);
-        this.printMessage('(INFO) ' + message);
+        message = util.format('(INFO) %s', message);
+        this.printMessage(message);
     }
 
     warn(message) {
-        this.printMessage('(WARN) ' + message);
+         message = util.format('(WARN) %s', message);
+        this.printMessage(message);
     }
 
 }
