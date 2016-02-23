@@ -1,0 +1,29 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "async": "^1.5.2",
+    "camo": "^0.11.4",
+    "body-parser": "^1.15.0",
+    "mongodb": "^2.1.7",
+    "express": "^4.13.4",
+    "connect-mongo": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mixalloff/CakesCRM.git"
+  },
+  "author": "Mixalloff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mixalloff/CakesCRM/issues"
+  },
+  "homepage": "https://github.com/Mixalloff/CakesCRM#readme"
+}

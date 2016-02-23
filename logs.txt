@@ -64,3 +64,5 @@
 14:13:41 -- (INFO) Database connected!
 14:16:21 -- (INFO) Сервер запущен на порте 8080
 14:16:21 -- (INFO) Database connected!
+14:49:36 -- (INFO) Сервер запущен на порте 8080
+14:49:36 -- (INFO) Database connected!
