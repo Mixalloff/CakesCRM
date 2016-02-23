@@ -1,0 +1,9 @@
+{
+    "server" : "localhost",
+    "port" : 8080,
+    
+    "db" : {
+        "name" : "cakes_db",
+        "connection" : "mongodb://localhost/cakes_db"
+    }
+}
