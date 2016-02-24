@@ -7,7 +7,7 @@ var express = require("express"),
     Logger = require('./utils/logger'),
     BodyParser = require('body-parser'),
     Controllers = require('./controllers'),
-    ServerError = require('./utils/server_error');
+    ServerError = require('./errors/server_error');
     
 class Server {
     constructor(port, logger){
