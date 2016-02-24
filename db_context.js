@@ -4,10 +4,8 @@ var camo = require("camo"),
     logger = require("./utils/logger");
       
 // Подключение к БД
-var connectToDB = function(callback){
-    connect(config.db.connection).then(function(db){
-        callback(db);
-    });
+var connectToDB = function(){
+    return connect(config.db.connection);
 }
 
 exports.connectToDB = connectToDB;
