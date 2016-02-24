@@ -10,4 +10,13 @@ router.get('/all', (req, res) =>{
     });
 });
 
+router.post('/create', (req, res) => {
+    var entity = req.body;
+    Client.create(entity).save().then(() =>{
+        res.JSONAnswer('client_create', "Client is added");
+    }).catch((e)=>{
+        next();
+    });
+});
+
 module.exports = router;

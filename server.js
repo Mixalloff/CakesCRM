@@ -6,7 +6,8 @@ var express = require("express"),
     config  = require("./configs/common.json"),
     Logger = require('./utils/logger'),
     BodyParser = require('body-parser'),
-    Controllers = require('./controllers');
+    Controllers = require('./controllers'),
+    ServerError = require('./utils/server_error');
     
 class Server {
     constructor(port, logger){
@@ -44,7 +45,13 @@ class Server {
         app.use('/clients', Controllers.Client);
         app.use('/orders', Controllers.Order);
        
-        app.use((req, res)=>{
+        app.use((req, res, err)=>{
+            if (err instanceof ServerError) {
+                this.logger.info('Ошибка: ' + err.toClient());
+                res.status(err.code).end(err.toClient());
+                return;
+            }
+            
             res.send(404, "Page not found");
         });
     }
