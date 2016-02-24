@@ -10,7 +10,7 @@ var Server = require('./server');
 var config = require('./configs/common');
 
 
-dbContext.connectToDB(function(){
+dbContext.connectToDB().then(function(db){
     logger.info("Database connected!");
 });
 
